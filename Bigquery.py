@@ -7,7 +7,8 @@ async def scrape_jobs_from_indeed(job_title, location):
 
     # Navigate to Indeed
     await page.goto('https://www.indeed.com/')
-
+    # Wait for 5 seconds
+    await asyncio.sleep(5) 
     # Input job title
     await page.waitForSelector('input[name="q"]')
     await page.type('input[name="q"]', job_title)
